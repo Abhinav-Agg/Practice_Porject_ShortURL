@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Store the token in localStorage or sessionStorage
+            const token = "<%= token %>";
+            localStorage.setItem('token', token);
+
+            // Redirect to the URL
+            window.location.href = "<%= redirectUrl %>";
+        });
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>
