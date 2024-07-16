@@ -56,6 +56,7 @@ const handleLogin = async (req, res) => {
         const token = setUserToken(getUser);
         // we set the token in cookie. So that we get data in anywhere from this cookies.
         res.cookie("token", token);
+        res.writeHead("authorization", `Bearer ${token}`);   // By this we set the token in response Header using jwt which we get.
         return res.redirect("/");
     }
     catch (err) {
